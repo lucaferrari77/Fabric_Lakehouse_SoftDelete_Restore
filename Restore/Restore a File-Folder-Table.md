@@ -1,6 +1,6 @@
 # How to restore a dropped file/folder/table in a MS Fabric Lakehouse
 
-In case you need to restore a file dropped less than 7 days ago, you can use this approach.
+In case you need to restore a file, folder or a table dropped less than 7 days ago, you can use this approach.
 
 1. If not available, install the Az.Storage module: [Install-Module](https://learn.microsoft.com/en-us/powershell/module/az.tools.installer/install-azmodule?view=aztools) Az.Storage -Repository PSGallery.
 2. Connect to your Azure environment using the [Connect-AzAccount](https://learn.microsoft.com/en-us/powershell/module/az.accounts/connect-azaccount?view=azps-12.3.0) and the proper account when required.
@@ -17,3 +17,15 @@ In case you need to restore a file dropped less than 7 days ago, you can use thi
 ![](/Restore/Images/Restore-File.png)
 
 The complete Powershell script is available [here](/Restore/RestoreFolderFileTable.ps1).
+
+# Notes
+
+Az.Storage assumes that the name of the MS Fabric workspace adhere to the [Azure Storage naming rules](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules#microsoftstorage). If you named your MS Fabric workspace using capitalized names the exploration will fail.
+![](/Restore/Images/UnsupportedName.png)
+
+In this case you can use the WorkspaceId and the lakehouseId from the url from the Fabric portal
+![](/Restore/Images/idfromurl.png)
+
+and use them in the powershell script
+
+![](/Restore/Images/RestoreUnsupportedName.png)
