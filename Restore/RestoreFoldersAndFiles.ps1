@@ -18,4 +18,4 @@ $ctx = New-AzStorageContext -StorageAccountName 'onelake' -UseConnectedAccount -
 Get-AzDataLakeGen2DeletedItem -Context $ctx -FileSystem 'your workspace' -Path 'yourlakehouse.lakehouse' | Select Path, DeletionId
 
 #Restoring the file
-Restore-AzDataLakeGen2DeletedItem -Context $ctx -FileSystem 'your workspace'  -Path 'deleteitempath' -DeletionId 133709673683448292
+Restore-AzDataLakeGen2DeletedItem -Context $ctx -FileSystem 'your workspace'  -Path 'deleteitempath' -DeletionId *yourdeletionid from the previous step*
