@@ -15,3 +15,5 @@ In case you need to restore a file dropped less than 7 days ago, you can use thi
 ![](/Restore/Images/getdeletedfiles.png)
 8. Restore the file running this: [Restore-AzDataLakeGen2DeletedItem](https://learn.microsoft.com/en-us/powershell/module/az.storage/restore-azdatalakegen2deleteditem?view=azps-11.6.0) -Context $ctx -FileSystem 'yourworkspacename'  -Path 'path to the file' -DeletionId deletionId 
 ![](/Restore/Images/Restore-File.png)
+
+The complete Powershell script is available [here](/Restore/RestoreFolderFileTable.ps1).
