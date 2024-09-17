@@ -14,8 +14,8 @@ Set-AzContext -SubscriptionId 'Your SubscritionId from the previous step'
 #Creating the storage context to be used during the discovery and the restore
 $ctx = New-AzStorageContext -StorageAccountName 'onelake' -UseConnectedAccount -endpoint 'fabric.microsoft.com' 
 
-#Getting the list: Deleted files
+#Getting the list: Deleted files/folders
 Get-AzDataLakeGen2DeletedItem -Context $ctx -FileSystem 'your workspace' -Path 'yourlakehouse.lakehouse' | Select Path, DeletionId
 
-#Restoring the file
+#Restoring the file/folders
 Restore-AzDataLakeGen2DeletedItem -Context $ctx -FileSystem 'your workspace'  -Path 'path from the previous' -DeletionId *yourdeletionid from the previous step*
