@@ -2,7 +2,8 @@
 This set of scripts will help you restoring a file, a folder or a table accidentally dropped from a MS Fabric lakehouse.
 
 # Pre-requisites
-[Powershell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)
+1. [Powershell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4)
+2. [Az.Storage module for Powershell](https://www.powershellgallery.com/packages/Az.Storage/3.7.0)
 
 # Soft delete for OneLake files
 
